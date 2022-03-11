@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Book Details</title>
+	<title>Search results...</title>
 	<meta name="description" content="" />
 	<meta name="viewport" content="width=device-width" />
 	<base href="/" />
@@ -14,14 +14,15 @@
 </head>
 
 <body>
+	<div th:insert="components/navbar-with-search::navbar-search-panel"></div>
 	<div class="container">
-		<div th:insert="components/navbar-with-search::navbar-search-panel"></div>
 		<section class="content">
 			<div class="card-group">
 				<div class="card" style="flex: 0 0 18%; margin: 30px" th:each="result: ${searchResults}">
 					<img th:src="${result.cover_i}" class="card-img-top" alt="...">
 					<div class="card-body">
-						<h5 class="card-title" th:text="${result.title}">Card title</h5>
+						<h5 class="card-title" th:text="${result.title}">Book name</h5>
+						<h6 class="card-text" th:text="${result.author_name}">Author</h6>
 						<a href="#" th:href="@{'/books/'+${result.key}}" class="btn btn-primary">View book</a>
 					</div>
 				</div>
@@ -29,4 +30,5 @@
 		</section>
 	</div>
 </body>
+
 </html>

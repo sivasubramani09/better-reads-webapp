@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Better Reads</title>
+	<title>Better Reads home</title>
 	<meta name="description" content="" />
 	<meta name="viewport" content="width=device-width" />
 	<base href="/" />
@@ -14,8 +14,8 @@
 </head>
 
 <body>
+	<div th:insert="components/navbar-with-search::navbar-search-panel"></div>
 	<div class="container">
-		<div th:insert="components/navbar-with-search::navbar-search-panel"></div>
 		<section class="content">
 			<h1>My Books</h1>
 			<div class="card  mb-3" style="max-width:540px;" th:each="book: ${books}">
